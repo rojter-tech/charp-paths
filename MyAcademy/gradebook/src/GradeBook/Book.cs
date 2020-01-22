@@ -4,8 +4,13 @@ namespace GradeBook
 {
     public class Book
     {
+        // Public Fields
+        public string Name;
+
+
+        // Public Methods
         public Book(string name){
-            this.name = name;
+            Name = name;
             grades = new List<double>();
             count = 0;
             gradeSum = 0;
@@ -32,8 +37,16 @@ namespace GradeBook
             return result;
         }
 
+        // Private Fields
+        private List<double> grades;
+        private int count;
+        private double gradeSum;
+        private double highGrade;
+        private double lowGrade;
 
         /*
+        // Private Methods
+
         private double get_grade_sum(){
             double sum = 0.0;
             foreach (var digit in grades) {sum+=digit;}
@@ -42,7 +55,7 @@ namespace GradeBook
         
 
         private string get_name(){
-            return name;
+            return Name;
         }
 
 
@@ -72,14 +85,6 @@ namespace GradeBook
 
 
         */
-
-        // Fields
-        private List<double> grades;
-        private string name;
-        private int count;
-        private double gradeSum;
-        private double highGrade;
-        private double lowGrade;
 
     }
 }
