@@ -73,7 +73,6 @@ namespace GradeBook
 
         */
 
-
         // Fields
         private List<double> grades;
         private string name;
