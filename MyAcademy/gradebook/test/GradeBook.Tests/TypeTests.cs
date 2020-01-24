@@ -86,6 +86,25 @@ namespace GradeBook.Tests
 
 
         [Fact]
+        public void StrigsBehavesLikeValueTypes()
+        // Strings are immutable even though they are reference type.
+        {
+            string name = "Danne";
+            string uppername = MakeUppercase(name);
+
+            Assert.NotEqual("DANNE", name); // Like it should be by default
+            Assert.Equal("Danne", name); // Instead, due to String class definition
+            Assert.Equal("DANNE", uppername);
+        }
+
+
+        private string MakeUppercase(string parameter)
+        {
+            return parameter.ToUpper();
+        }
+
+
+        [Fact]
         public void GetBookReturnsDiffrentObjects()
         {
             var book1 = GetBook("Book 1");
