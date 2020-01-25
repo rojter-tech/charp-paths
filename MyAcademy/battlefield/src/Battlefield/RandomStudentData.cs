@@ -67,7 +67,6 @@ namespace Battlefield
                 return names[random_index];
             }
         }
-
         
 
         private static int GetRandomScore()
@@ -78,6 +77,5 @@ namespace Battlefield
                 return getrandom.Next(min, max);
             }
         }
-
     }
 }

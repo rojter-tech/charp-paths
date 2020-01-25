@@ -1,6 +1,6 @@
 namespace Battlefield
 {
-    class ItStudent : Student
+    public class ItStudent : Student
     {
         public ItStudent()
         {

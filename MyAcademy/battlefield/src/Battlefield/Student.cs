@@ -1,6 +1,6 @@
 namespace Battlefield
 {
-    class Student
+    public class Student
     {
         public Student()
         {
@@ -11,14 +11,14 @@ namespace Battlefield
             english = random_studend_data.English;
         }
 
-        public int GetStudentBonus()
-        {
-            return bonus;
-        }
-
         public void SetStudentName(string name)
         {
             this.name = name;
+        }
+
+        public int GetStudentBonus()
+        {
+            return bonus;
         }
 
         public string GetStudentName()

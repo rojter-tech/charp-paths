@@ -1,6 +1,6 @@
 namespace Battlefield
 {
-    class EsStudent : Student
+    public class EsStudent : Student
     {
         public EsStudent()
         {
