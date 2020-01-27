@@ -3,26 +3,18 @@ using System.Collections.Generic;
 
 namespace GradeBook
 {
-    public class Book
+    public class Book : NamedObject
     {
-        // Public Fields
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                if(!String.IsNullOrEmpty(value))
-                {
-                    name = value;
-                }
-            }
-        }
+        // Pubic Fields
+        public delegate void GradeAddedDelegate(object sender, EventArgs args);
+        public event GradeAddedDelegate GradeAdded;
+
+        // Static Fields
+        public const string CATEGORY = "Science";
 
         // Public Methods
-        public Book(string name){
+        public Book(string name) : base(name)
+        {
             Name = name;
             grades = new List<double>();
             count = 0;
@@ -30,7 +22,6 @@ namespace GradeBook
             highGrade = double.MinValue;
             lowGrade = double.MaxValue;
         }
-
 
         public void AddLetterGrade(char letter)
         {
@@ -66,12 +57,19 @@ namespace GradeBook
                 count = grades.Count;
                 if (highGrade < grade){highGrade = grade;}
                 if (lowGrade > grade){lowGrade = grade;}
+
+                if(GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
+                }
             }
             else
             {
                 throw new ArgumentException($"Bad user input, invalid {nameof(grade)}");
             }
         }
+
+        
 
 
         private Statistics zero_stats(Statistics stats)
@@ -122,7 +120,6 @@ namespace GradeBook
         }
 
         // Private Fields
-        private string name;
         private List<double> grades;
         private int count;
         private double gradeSum;
