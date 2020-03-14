@@ -1,0 +1,9 @@
+rubrik1,beskrivning1,50,50,50,50
+rubrik2,beskrivning2,50,50,50,50
+rubrik3,beskrivning3,50,50,50,50
+rubrik4,beskrivning4,50,50,50,50
+rubrik5,beskrivning5,50,50,50,50
+rubrik6,beskrivning6,50,50,50,50
+rubrik7,beskrivning7,50,50,50,50
+rubrik8,beskrivning8,50,50,50,50
+rubrik9,beskrivning9,50,50,50,50
